@@ -94,6 +94,7 @@ const TablePagination = React.forwardRef(function TablePagination(props, ref) {
     rowsPerPage,
     rowsPerPageOptions = defaultRowsPerPageOptions,
     SelectProps = {},
+    toolbarProps,
     ...other
   } = props;
   let colSpan;
@@ -108,7 +109,7 @@ const TablePagination = React.forwardRef(function TablePagination(props, ref) {
 
   return (
     <Component className={clsx(classes.root, className)} colSpan={colSpan} ref={ref} {...other}>
-      <Toolbar className={classes.toolbar}>
+      <Toolbar {...toolbarProps} className={classes.toolbar}>
         <div className={classes.spacer} />
         {rowsPerPageOptions.length > 1 && (
           <Typography color="inherit" variant="body2" className={classes.caption} id={labelId}>
